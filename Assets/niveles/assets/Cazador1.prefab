@@ -97,6 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f9b67518220c346ab58dc7e9bb439f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Cazador
-  Health: 190
-  Damage: 20
+  enemyPrefab: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  numberOfEnemies: 5
+  timeBetweenEnemies: 5
+  speed: 0.2
+  timeBetweenWaves: 10

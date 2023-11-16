@@ -6,17 +6,27 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    public GameObject enemyPrefab; // Prefab del enemigo
-    public Transform spawnPoint;  // Punto de aparición de los enemigos
-    public int numberOfEnemies = 5; // Número de enemigos por oleada
-    public float timeBetweenEnemies = 2f; // Tiempo entre cada enemigo
+    public GameObject enemyPrefab;  
+    public int numberOfEnemies = 5;
+    public float timeBetweenEnemies = 2f;
+    public float speed = 0;
+
+    void Update()
+    {
+        Move();
+    }
+
+    void Move()
+    {
+        transform.Translate(Vector2.left * speed * Time.deltaTime);
+    }
 
     internal void TakeDamage(int damage)
     {
         throw new NotImplementedException();
     }
 
-    public float timeBetweenWaves = 10f; // Tiempo entre oleadas
+    public float timeBetweenWaves = 10f; 
 
     private void Start()
     {
@@ -31,13 +41,12 @@ public class Enemy : MonoBehaviour
 
             for (int i = 0; i < numberOfEnemies; i++)
             {
-                GameObject newEnemyObject = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
-                Enemy enemyScript = newEnemyObject.GetComponent<Enemy>();
+                //Enemy enemyScript = newEnemyObject.GetComponent<Enemy>();
 
-                if (enemyScript != null)
+               /* if (enemyScript != null)
                 {
-                    ConfigureEnemy(enemyScript); // Configura las propiedades del enemigo
-                }
+              //      ConfigureEnemy(enemyScript); // Configura las propiedades del enemigo
+                }*/
 
                 yield return new WaitForSeconds(timeBetweenEnemies);
             }
