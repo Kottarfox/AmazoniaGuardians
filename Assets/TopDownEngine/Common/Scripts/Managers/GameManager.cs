@@ -182,18 +182,20 @@ namespace MoreMountains.TopDownEngine
 		public List<PointsOfEntryStorage> PointsOfEntry;
 		/// the stored selected character
 		public Character StoredCharacter { get; set; }
+        public object draggingObject { get; set; }
 
-		// storage
-		protected bool _inventoryOpen = false;
+        // storage
+        protected bool _inventoryOpen = false;
 		protected bool _pauseMenuOpen = false;
 		protected InventoryInputManager _inventoryInputManager;
 		protected int _initialMaximumLives;
 		protected int _initialCurrentLives;
+        public GameObject currentContainer;
 
-		/// <summary>
-		/// On Awake we initialize our list of points of entry
-		/// </summary>
-		protected override void Awake()
+        /// <summary>
+        /// On Awake we initialize our list of points of entry
+        /// </summary>
+        protected override void Awake()
 		{
 			base.Awake ();
 			PointsOfEntry = new List<PointsOfEntryStorage> ();
