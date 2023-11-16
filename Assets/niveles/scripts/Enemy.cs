@@ -10,6 +10,12 @@ public class Enemy : MonoBehaviour
     public Transform spawnPoint;  // Punto de aparición de los enemigos
     public int numberOfEnemies = 5; // Número de enemigos por oleada
     public float timeBetweenEnemies = 2f; // Tiempo entre cada enemigo
+
+    internal void TakeDamage(int damage)
+    {
+        throw new NotImplementedException();
+    }
+
     public float timeBetweenWaves = 10f; // Tiempo entre oleadas
 
     private void Start()

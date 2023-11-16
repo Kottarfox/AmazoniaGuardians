@@ -7,11 +7,52 @@ public class Tower : MonoBehaviour
     public string Name;
     public int Health = 100;
     public int Damage = 25;
+    public float FireRate = 2f; 
+    public Transform firePoint;
+    public GameObject projectilePrefab;
+
+    private void Start()
+    {
+        InvokeRepeating("Attack", 0f, FireRate);
+    }
 
     public void Attack(Enemy enemy)
     {
         enemy.TakeDamage(Damage);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject targetEnemy = null;
+        float closestDistance = Mathf.Infinity;
+
+        foreach (GameObject Enemy in enemies)
+        {
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distanceToEnemy < closestDistance)
+            {
+                closestDistance = distanceToEnemy;
+                targetEnemy = Enemy;
+            }
+        }
+
+        if (targetEnemy != null)
+        {
+            Shoot(targetEnemy.transform);
+        }
+
+
     }
+
+    void Shoot(Transform target)
+    {
+        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        Projectile projectileScript = projectile.GetComponent<Projectile>();
+
+        if (projectileScript != null)
+        {
+            projectileScript.SetTarget(target); // Configura el objetivo del proyectil
+            projectileScript.SetDamage(Damage); // Configura el daño del proyectil
+        }
+    }
+
 
     public void TakeDamage(int damage)
     {
