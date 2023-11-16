@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4323603845195138830}
   - component: {fileID: 3925974415977885287}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PICO_AZUL_Place
   m_TagString: Untagged
   m_Icon: {fileID: 0}

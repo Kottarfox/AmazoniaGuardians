@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8843942190197947781}
   - component: {fileID: 4365849606662801998}
   - component: {fileID: -5846905093717428909}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PICO_AZUL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
