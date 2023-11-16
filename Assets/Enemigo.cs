@@ -12,4 +12,15 @@ public class Enemigo : MonoBehaviour
     {
         transform.position -= new Vector3(speed, 0, 0);
     }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+    }
+
+    public void Attack(aliado aliado)
+    {
+
+        aliado.TakeDamage(damage);
+    }
 }
