@@ -10,14 +10,12 @@ public class Tower : MonoBehaviour
 
     public void Attack(Enemy enemy)
     {
-        Debug.Log($"{Name} is attacking {enemy.Name} and dealing {Damage} damage.");
         enemy.TakeDamage(Damage);
     }
 
     public void TakeDamage(int damage)
     {
         Health -= damage;
-        Debug.Log($"{Name} took {damage} damage. Remaining health: {Health}");
 
         if (Health <= 0)
         {
