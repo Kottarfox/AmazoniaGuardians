@@ -6,17 +6,17 @@ public class EnemySpawner : MonoBehaviour
 {
     public Transform[] spawnpoints;
 
-    public GameObject minero;
+    public GameObject[] Enemigo;
 
     private void Start()
     {
-        InvokeRepeating("SpawnMinero", 2, 1);
+        InvokeRepeating("SpawnMinero", 2, 3);
     }
 
     void SpawnMinero()
     {
         int r = Random.Range(0, spawnpoints.Length);
-        GameObject MyMinero = Instantiate(minero, spawnpoints[r].position, Quaternion.identity);
+        GameObject MyMinero = Instantiate(Enemigo, spawnpoints[r].position, Quaternion.identity);
     }
  
 }
