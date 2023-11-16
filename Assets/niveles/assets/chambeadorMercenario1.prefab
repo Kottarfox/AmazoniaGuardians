@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f9b67518220c346ab58dc7e9bb439f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Mercenario
   Health: 250
   Damage: 25
+  Speed: 0.01

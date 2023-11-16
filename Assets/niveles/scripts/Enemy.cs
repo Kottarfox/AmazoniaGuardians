@@ -7,16 +7,8 @@ public class Enemy : MonoBehaviour
     public string Name;
     public int Health = 50;
     public int Damage = 10;
+    public double Speed = 1;
 
-    private void Start()
-    {
-        Move();
-    }
-
-    private void Move()
-    {
-        Debug.Log($"{Name} is moving.");
-    }
 
     public void Attack(Tower tower)
     {
