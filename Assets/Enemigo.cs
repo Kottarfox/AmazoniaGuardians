@@ -6,6 +6,7 @@ public class Enemigo : MonoBehaviour
 {
     public float speed;
     public float health;
+    public float damage;
 
     private void FixedUpdate()
     {
