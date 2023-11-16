@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ObjectCard : MonoBehaviour
+public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject object_Drag;
+    public GameObject object_Game;
+    public Canvas canvas;
+    private GameObject objectDragInstance;
+
+    public void OnDrag(PointerEventData eventData)
     {
-        
+        objectDragInstance.transform.position = Input.mousePosition;
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void InPointerDown(PointerEventData eventData)
     {
-        
+        objectDragInstance = Instantiate(object_Drag, canvas.transform);
+        objectDragInstance.transform.position = Input.mousePosition;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        throw new System.NotImplementedException();
+
     }
 }
