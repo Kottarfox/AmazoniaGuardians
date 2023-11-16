@@ -7,7 +7,7 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
 {
     public GameObject object_Drag;
     public GameObject object_Game;
-    public Canvas canvas;
+    public GameObject tilemap;
     private GameObject objectDragInstance;
 
     public void OnDrag(PointerEventData eventData)
@@ -16,15 +16,15 @@ public class ObjectCard : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoi
 
     }
 
-    public void InPointerDown(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
-        objectDragInstance = Instantiate(object_Drag, canvas.transform);
+        objectDragInstance = Instantiate(object_Drag, tilemap.transform);
         objectDragInstance.transform.position = Input.mousePosition;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        Destroy(objectDragInstance);
 
     }
 }
