@@ -7,16 +7,20 @@ public class GameManager : MonoBehaviour
     public GameObject draggingObject;
     public GameObject currentContainer;
 
-    public static GameManager instance;
+    public static GameManager Instance;
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
 
     }
 
     public void PlaceObject()
     {
+        if (draggingObject != null && currentContainer != null)
+        {
+            
+        }
 
     }
 }
