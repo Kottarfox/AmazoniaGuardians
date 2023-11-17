@@ -55,10 +55,10 @@ public class Enemy : MonoBehaviour
 
     void ConfigureEnemy(Enemy enemy)
     {
-        // Configurar las propiedades del enemigo según sea necesario
-        enemy.SetName("Enemy"); // Método para asignar un nombre al enemigo
-        enemy.SetHealth(50); // Método para establecer la salud del enemigo
-        enemy.SetDamage(10); // Método para establecer el daño del enemigo
+      
+        enemy.SetName("Enemy"); 
+        enemy.SetHealth(50); 
+        enemy.SetDamage(10); 
     }
 
     private void SetDamage(int v)

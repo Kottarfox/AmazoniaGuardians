@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class DeathBarrier : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
+       
+        if (other.CompareTag("Enemy"))
+        {
+          
+            Debug.Log("¡El jugador ha entrado en la barrera de muerte!");
+           
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnTriggerStay(Collider other)
     {
-        
+       
+    }
+
+  
+    private void OnTriggerExit(Collider other)
+    {
     }
 }
+
