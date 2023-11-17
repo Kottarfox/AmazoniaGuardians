@@ -15,13 +15,13 @@ public class Tower : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("Attack", 0f, FireRate);
-        Attack();
+       // Attack();
     }
 
-    private void Attack()
-    {
+   // private void Attack()
+    //{
         
-    }
+    //}
 
     public void Attack(Enemy enemy)
     {
